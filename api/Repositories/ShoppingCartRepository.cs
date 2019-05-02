@@ -42,12 +42,22 @@ namespace api.Repositories
 
         public List GetById(int id)
         {
-            throw new System.NotImplementedException();
+            using(IDbConnection con = Connection){
+                var qry = "select id, name from List where id = @id";
+                con.Open();
+                var result = con.QueryFirstOrDefault<List>(qry, new{id});
+                return result;
+            }
         }
 
-        public void Remove(int id)
+        public int Remove(int id)
         {
-            throw new System.NotImplementedException();
+            using(IDbConnection con = Connection){
+                var qry = "delete List where id = @id";
+                con.Open();
+                var rows = con.Execute(qry, new{id});
+                return rows;
+            }
         }
     }
 }

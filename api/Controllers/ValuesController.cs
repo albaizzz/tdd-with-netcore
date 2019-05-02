@@ -21,7 +21,7 @@ namespace api.Controllers
         public IActionResult Get()
         {
             var items =  _service.GetAllItems();
-            return Ok();
+            return Ok(items);
         }
 
         // GET api/values/5
@@ -45,8 +45,15 @@ namespace api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
+            try{
+                _service.Remove(id);
+                return Ok("Ok");
+            }
+            catch(Exception){
+                return NotFound("Not found");
+            }
         }
     }
 }

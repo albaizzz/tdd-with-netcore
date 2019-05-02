@@ -25,11 +25,22 @@ namespace api.Service
             return results;
         }
         public List GetById(int id){
-            throw new NotImplementedException();
+            var results = _shoppingRepository.GetById(id);
+            return results;
         }
         
         public void Remove(int id){
-            throw new NotImplementedException();
+            try
+            {
+                var results = _shoppingRepository.Remove(id);
+                if (results ==0){
+                    throw new Exception("Data not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

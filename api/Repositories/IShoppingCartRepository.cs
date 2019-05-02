@@ -9,6 +9,6 @@ namespace api.Repositories
         IEnumerable<List> GetAllItems();
         List Add(List newItem);
         List GetById(int id);
-        void Remove(int id);
+        int Remove(int id);
     }
 }
