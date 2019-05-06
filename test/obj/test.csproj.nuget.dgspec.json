@@ -4,14 +4,14 @@
     "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj": {}
   },
   "projects": {
-    "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj": {
+    "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj",
-        "projectName": "test",
-        "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj",
+        "projectUniqueName": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj",
+        "projectName": "api",
+        "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj",
         "packagesPath": "/home/albaizzz/.nuget/packages/",
-        "outputPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/",
+        "outputPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -39,6 +39,79 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[1.60.6, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "MySqlConnection": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj",
+        "projectName": "test",
+        "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj",
+        "packagesPath": "/home/albaizzz/.nuget/packages/",
+        "outputPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/albaizzz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj": {
+                "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.0.1, )"
@@ -48,6 +121,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "moq": {
+              "target": "Package",
+              "version": "(, )"
             },
             "xunit": {
               "target": "Package",

@@ -1,0 +1,4 @@
+/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/Debug/netcoreapp2.2/test.csprojAssemblyReference.cache
+/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/Debug/netcoreapp2.2/test.csproj.CoreCompileInputs.cache
+/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/Debug/netcoreapp2.2/test.AssemblyInfoInputs.cache
+/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/Debug/netcoreapp2.2/test.AssemblyInfo.cs

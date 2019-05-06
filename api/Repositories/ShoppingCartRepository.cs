@@ -24,9 +24,21 @@ namespace api.Repositories
             }
         }
 
-        public List Add(List newItem)
+        public int Add(List newItem)
         {
-            throw new System.NotImplementedException();
+            using (IDbConnection con = Connection){
+                try
+                {
+                    var qry = "insert into list (name) values(@name)";
+                    con.Open();
+                    var row = con.Execute(qry, new{newItem.Name});
+                    return row;
+                }
+                catch (System.Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
 
         public IEnumerable<List> GetAllItems()

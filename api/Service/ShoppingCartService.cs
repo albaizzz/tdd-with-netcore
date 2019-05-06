@@ -17,7 +17,15 @@ namespace api.Service
         }
 
         public List Add(List newItem){
-            throw new NotImplementedException();
+            try
+            {
+                var result = _shoppingRepository.Add(newItem);
+                return newItem;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public IEnumerable<List> GetAllItems(){

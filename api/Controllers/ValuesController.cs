@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Net;
+using System.Net.Mime;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,15 +28,33 @@ namespace api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                var item = _service.GetById(id);
+                return Ok(item);
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw;
+            }
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody]List newitem)
         {
+            try
+            {
+                var item = _service.Add(newitem);
+                return Ok(item);
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new{ex.Message}); 
+            }
         }
 
         // PUT api/values/5
