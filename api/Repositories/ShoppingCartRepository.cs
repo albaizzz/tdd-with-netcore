@@ -12,35 +12,50 @@ namespace api.Repositories
     
     public class ShoppingCartRepository : IShoppingCartRepository
     {
-        private readonly IConfiguration _config;
+        private readonly AppSetting _config;
 
-        public ShoppingCartRepository(IConfiguration config){
+        public ShoppingCartRepository(AppSetting config){
             _config = config;
         }
 
         public IDbConnection Connection{
             get {
-                return new SqlConnection(_config.GetConnectionString("mysqlcon"));
+                return new SqlConnection(_config.ConnectionStrings.mysqlcon);
             }
         }
 
-        public List Add(List newItem)
+        public int Add(Item newItem)
         {
-            throw new System.NotImplementedException();
+            int rowAffected;
+            try
+            {
+                using(IDbConnection con = Connection){
+                    con.Open();
+                    var qry = "insert into List(name) values (@name)";
+                    DynamicParameters param = new DynamicParameters();
+                    param.Add("@name", newItem.Name);
+                    rowAffected= con.Execute(qry, param);
+                }   
+            }
+            catch (System.Exception ex)
+            {
+                throw;
+            }
+            return rowAffected; 
         }
 
-        public IEnumerable<List> GetAllItems()
+        public IEnumerable<Item> GetAllItems()
         {
             using(IDbConnection con = Connection){
                 var qry = "select id, name from List";
                 con.Open();
-                var result = con.Query<List>(qry);
+                var result = con.Query<Item>(qry);
                 return result.AsEnumerable();
             }
             
         }
 
-        public List GetById(int id)
+        public Item GetById(int id)
         {
             throw new System.NotImplementedException();
         }

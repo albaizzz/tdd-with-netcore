@@ -9,22 +9,24 @@ namespace api.Service
     public class ShoppingCartService : IShoppingCartService
     {
         private IShoppingCartRepository _shoppingRepository;
-        private IConfiguration _config;
-        public ShoppingCartService(IConfiguration config)
+        private AppSetting _config;
+        
+        public ShoppingCartService(AppSetting config)
         {
             _config = config;
             _shoppingRepository = new ShoppingCartRepository(_config);
         }
 
-        public List Add(List newItem){
-            throw new NotImplementedException();
+        public int Add(Item newItem){
+            var rowAffected = _shoppingRepository.Add(newItem);
+            return rowAffected;
         }
 
-        public IEnumerable<List> GetAllItems(){
+        public IEnumerable<Item> GetAllItems(){
             var results = _shoppingRepository.GetAllItems();
             return results;
         }
-        public List GetById(int id){
+        public Item GetById(int id){
             throw new NotImplementedException();
         }
         

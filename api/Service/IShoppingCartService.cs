@@ -5,9 +5,9 @@ using api.Models;
 namespace api.Service{
     public interface IShoppingCartService
     {
-        IEnumerable<List> GetAllItems();
-        List Add(List newItem);
-        List GetById(int id);
+        IEnumerable<Item> GetAllItems();
+        int Add(Item newItem);
+        Item GetById(int id);
         void Remove(int id);
     }
 }

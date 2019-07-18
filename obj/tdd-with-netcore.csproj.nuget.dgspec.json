@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj": {}
+    "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj": {}
   },
   "projects": {
-    "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj": {
+    "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj",
-        "projectName": "test",
-        "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj",
+        "projectUniqueName": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj",
+        "projectName": "tdd-with-netcore",
+        "projectPath": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj",
         "packagesPath": "/home/albaizzz/.nuget/packages/",
-        "outputPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/obj/",
+        "outputPath": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -41,7 +41,7 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.0.1, )"
+              "version": "[15.9.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -49,13 +49,13 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
-            "xunit": {
+            "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[2.4.0, )"
+              "version": "[3.11.0, )"
             },
-            "xunit.runner.visualstudio": {
+            "nunit": {
               "target": "Package",
-              "version": "[2.4.0, )"
+              "version": "[3.11.0, )"
             }
           },
           "imports": [

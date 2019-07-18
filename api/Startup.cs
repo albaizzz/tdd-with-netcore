@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using api.Service;
+using api.Models;
 
 namespace tddnetcore
 {
@@ -26,6 +27,9 @@ namespace tddnetcore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var appSetting = new AppSetting();
+            Configuration.Bind("AppSetting", appSetting);
+            services.AddSingleton(appSetting);
             services.AddTransient<IShoppingCartService, ShoppingCartService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

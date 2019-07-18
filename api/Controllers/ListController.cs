@@ -10,10 +10,10 @@ namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ListController : ControllerBase
     {
         private readonly IShoppingCartService _service;
-        public ValuesController(IShoppingCartService service){
+        public ListController(IShoppingCartService service){
             _service = service;
         }
         // GET api/values
@@ -21,7 +21,7 @@ namespace api.Controllers
         public IActionResult Get()
         {
             var items =  _service.GetAllItems();
-            return Ok();
+            return Ok(items);
         }
 
         // GET api/values/5
@@ -33,8 +33,17 @@ namespace api.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
-        {
+        public ActionResult Post([FromBody] Item newItem)
+        {   
+            try
+            {
+                _service.Add(newItem);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest();
+            }
+            return Ok();
         }
 
         // PUT api/values/5
