@@ -24,7 +24,6 @@ namespace api.Repositories
             }
         }
 
-<<<<<<< HEAD
         public int Add(Item newItem)
         {
             int rowAffected;
@@ -43,23 +42,6 @@ namespace api.Repositories
                 throw;
             }
             return rowAffected; 
-=======
-        public int Add(List newItem)
-        {
-            using (IDbConnection con = Connection){
-                try
-                {
-                    var qry = "insert into list (name) values(@name)";
-                    con.Open();
-                    var row = con.Execute(qry, new{newItem.Name});
-                    return row;
-                }
-                catch (System.Exception ex)
-                {
-                    throw ex;
-                }
-            }
->>>>>>> 1d7a49ce09ad6cc4ace189b246a8de7935e77445
         }
 
         public IEnumerable<Item> GetAllItems()
@@ -78,7 +60,7 @@ namespace api.Repositories
             using(IDbConnection con = Connection){
                 var qry = "select id, name from List where id = @id";
                 con.Open();
-                var result = con.QueryFirstOrDefault<List>(qry, new{id});
+                var result = con.QueryFirstOrDefault<Item>(qry, new{id});
                 return result;
             }
         }
@@ -91,6 +73,11 @@ namespace api.Repositories
                 var rows = con.Execute(qry, new{id});
                 return rows;
             }
+        }
+
+        void IShoppingCartRepository.Remove(int id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
