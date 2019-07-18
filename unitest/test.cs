@@ -23,7 +23,7 @@ namespace test
             };
             IEnumerable<Item> b = a;
             mock.Setup(m => m.GetAllItems()).Returns(b);
-            var svc = new ShoppingCartService(mock.Object);
+            // var svc = new ShoppingCartService(mock.Object);
             // var data = svc.GetAllItems();
             // Assert.Equal(5, data.Count());
         }
