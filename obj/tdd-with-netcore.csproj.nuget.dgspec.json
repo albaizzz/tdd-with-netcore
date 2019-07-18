@@ -4,14 +4,17 @@
     "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj": {}
   },
   "projects": {
+<<<<<<< HEAD:obj/tdd-with-netcore.csproj.nuget.dgspec.json
     "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj": {
+=======
+    "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj",
-        "projectName": "tdd-with-netcore",
-        "projectPath": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj",
+        "projectUniqueName": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj",
+        "projectName": "api",
+        "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj",
         "packagesPath": "/home/albaizzz/.nuget/packages/",
-        "outputPath": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/obj/",
+        "outputPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -39,6 +42,80 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[1.60.6, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "MySqlConnection": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/home/albaizzz/Documents/dotnetcore/tddnetcore/test/test.csproj": {
+>>>>>>> 1d7a49ce09ad6cc4ace189b246a8de7935e77445:test/obj/test.csproj.nuget.dgspec.json
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj",
+        "projectName": "tdd-with-netcore",
+        "projectPath": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/tdd-with-netcore.csproj",
+        "packagesPath": "/home/albaizzz/.nuget/packages/",
+        "outputPath": "/home/albaizzz/Documents/project/dotnetcore/tdd-with-netcore/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/albaizzz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj": {
+                "projectPath": "/home/albaizzz/Documents/dotnetcore/tddnetcore/api/api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[15.9.0, )"
@@ -49,7 +126,15 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
+<<<<<<< HEAD:obj/tdd-with-netcore.csproj.nuget.dgspec.json
             "NUnit3TestAdapter": {
+=======
+            "moq": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "xunit": {
+>>>>>>> 1d7a49ce09ad6cc4ace189b246a8de7935e77445:test/obj/test.csproj.nuget.dgspec.json
               "target": "Package",
               "version": "[3.11.0, )"
             },

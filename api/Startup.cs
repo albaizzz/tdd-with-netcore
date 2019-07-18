@@ -47,7 +47,7 @@ namespace tddnetcore
                 app.UseHsts();
             }
 
-            // app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

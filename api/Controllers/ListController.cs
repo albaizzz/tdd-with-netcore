@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Net;
+using System.Net.Mime;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,9 +28,18 @@ namespace api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                var item = _service.GetById(id);
+                return Ok(item);
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw;
+            }
         }
 
         // POST api/values
@@ -54,8 +65,15 @@ namespace api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
+            try{
+                _service.Remove(id);
+                return Ok("Ok");
+            }
+            catch(Exception){
+                return NotFound("Not found");
+            }
         }
     }
 }

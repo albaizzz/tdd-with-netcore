@@ -24,6 +24,7 @@ namespace api.Repositories
             }
         }
 
+<<<<<<< HEAD
         public int Add(Item newItem)
         {
             int rowAffected;
@@ -42,6 +43,23 @@ namespace api.Repositories
                 throw;
             }
             return rowAffected; 
+=======
+        public int Add(List newItem)
+        {
+            using (IDbConnection con = Connection){
+                try
+                {
+                    var qry = "insert into list (name) values(@name)";
+                    con.Open();
+                    var row = con.Execute(qry, new{newItem.Name});
+                    return row;
+                }
+                catch (System.Exception ex)
+                {
+                    throw ex;
+                }
+            }
+>>>>>>> 1d7a49ce09ad6cc4ace189b246a8de7935e77445
         }
 
         public IEnumerable<Item> GetAllItems()
@@ -57,12 +75,22 @@ namespace api.Repositories
 
         public Item GetById(int id)
         {
-            throw new System.NotImplementedException();
+            using(IDbConnection con = Connection){
+                var qry = "select id, name from List where id = @id";
+                con.Open();
+                var result = con.QueryFirstOrDefault<List>(qry, new{id});
+                return result;
+            }
         }
 
-        public void Remove(int id)
+        public int Remove(int id)
         {
-            throw new System.NotImplementedException();
+            using(IDbConnection con = Connection){
+                var qry = "delete List where id = @id";
+                con.Open();
+                var rows = con.Execute(qry, new{id});
+                return rows;
+            }
         }
     }
 }
