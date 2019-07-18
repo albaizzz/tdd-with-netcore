@@ -11,10 +11,9 @@ namespace api.Service
         private IShoppingCartRepository _shoppingRepository;
         private AppSetting _config;
         
-        public ShoppingCartService(AppSetting config)
+        public ShoppingCartService(IShoppingCartRepository shop)
         {
-            _config = config;
-            _shoppingRepository = new ShoppingCartRepository(_config);
+            _shoppingRepository =shop;
         }
 
         public int Add(Item newItem){

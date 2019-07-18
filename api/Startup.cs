@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using api.Service;
+using api.Repositories;
 using api.Models;
 
 namespace tddnetcore
@@ -30,6 +31,8 @@ namespace tddnetcore
             var appSetting = new AppSetting();
             Configuration.Bind("AppSetting", appSetting);
             services.AddSingleton(appSetting);
+            // services.Configure<AppSetting>(Configuration);
+            services.AddTransient<IShoppingCartRepository, ShoppingCartRepository>();
             services.AddTransient<IShoppingCartService, ShoppingCartService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

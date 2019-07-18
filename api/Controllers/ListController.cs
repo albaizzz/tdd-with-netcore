@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using api.Service;
 
+using Microsoft.Extensions.Options;
+
 namespace api.Controllers
 {
     [Route("api/[controller]")]
@@ -15,6 +17,7 @@ namespace api.Controllers
     public class ListController : ControllerBase
     {
         private readonly IShoppingCartService _service;
+        
         public ListController(IShoppingCartService service){
             _service = service;
         }
